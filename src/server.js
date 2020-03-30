@@ -4,6 +4,8 @@ const routes = require('./routes');
 const path = require('path')
 const PORT = process.env.PORT || 5000
 const cors = require('cors')
+var app = express()
+app.use(cors())
 
 const server = express()
 .use(express.static(path.join(__dirname, 'public')))
