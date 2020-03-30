@@ -3,12 +3,13 @@ const mongoose = require('mongoose');
 const routes = require('./routes');
 const path = require('path')
 const PORT = process.env.PORT || 5000
-
+const cors = require('cors')
 
 const server = express()
 .use(express.static(path.join(__dirname, 'public')))
 .use(express.json())
 .use(routes)
+.use(cors())
 .set('views', path.join(__dirname, 'views'))
 .set('view engine', 'ejs')
 .get('/', (req, res) => res.render('pages/index'))
