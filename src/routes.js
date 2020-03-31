@@ -3,9 +3,7 @@ const EstadoController = require('./controllers/EstadoController')
 const CidadeController = require('./controllers/CidadeController')
 const cors = require('cors')
 const routes = express.Router();
-var app = express()
-app.use(cors())
-routes.use(cors())
+
 routes.get('/', (req, res) => {
     return res.json({
         message: 'Hello World',
