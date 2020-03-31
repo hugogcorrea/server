@@ -4,7 +4,7 @@
 
 ## Config.
 
-- Hospedado em: https://hugoapp-backend.herokuapp.com/
+- Hospedado em: https://hugoapp-server.herokuapp.com/
 
 > Rotas:
 > Estado: /estados
