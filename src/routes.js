@@ -1,8 +1,10 @@
 const express = require('express');
 const EstadoController = require('./controllers/EstadoController')
 const CidadeController = require('./controllers/CidadeController')
-
+const cors = require('cors')
 const routes = express.Router();
+
+routes.use(cors())
 
 routes.get('/', (req, res) => {
     return res.json({
@@ -11,7 +13,7 @@ routes.get('/', (req, res) => {
 });
 
 //estado
-routes.get('/estados', EstadoController.find);
+routes.get('/estados',cors(), EstadoController.find);
 routes.post('/estados', EstadoController.create);
 routes.put('/estados/:_id?', EstadoController.update);
 routes.delete('/estados/:_id?', EstadoController.delete);

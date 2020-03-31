@@ -4,12 +4,7 @@ const routes = require('./routes');
 const path = require('path')
 const PORT = process.env.PORT || 5000
 const cors = require('cors')
-var app = express()
-var corsOptions = {
-    origin: 'http://localhost:4000',
-    optionsSuccessStatus: 200
-  }
-app.use(cors(corsOptions))
+
 
 const server = express()
 .use(express.static(path.join(__dirname, 'public')))
