@@ -4,6 +4,7 @@ const CidadeController = require('./controllers/CidadeController')
 const cors = require('cors')
 const routes = express.Router();
 
+routes.use(cors())
 routes.get('/', (req, res) => {
     return res.json({
         message: 'Hello World',
