@@ -5,6 +5,7 @@ const cors = require('cors')
 const routes = express.Router();
 
 routes.use(cors())
+routes.options('*', cors()) 
 routes.get('/', (req, res) => {
     return res.json({
         message: 'Hello World',
@@ -12,14 +13,14 @@ routes.get('/', (req, res) => {
 });
 
 //estado
-routes.get('/estados',cors(), EstadoController.find);
-routes.post('/estados', cors(), EstadoController.create);
-routes.put('/estados/:_id?', cors(), EstadoController.update);
-routes.delete('/estados/:_id?', cors(), EstadoController.delete);
+routes.get('/estados', EstadoController.find);
+routes.post('/estados', EstadoController.create);
+routes.put('/estados/:_id?', EstadoController.update);
+routes.delete('/estados/:_id?', EstadoController.delete);
 //cidade
-routes.get('/cidades/:_id?',cors(), EstadoController.cidadesByEstado);
-routes.post('/cidades', cors(),CidadeController.create);
-routes.put('/cidades/:_id?',cors(), CidadeController.update);
-routes.delete('/cidades/:_id?',cors(), CidadeController.delete);
+routes.get('/cidades/:_id?', EstadoController.cidadesByEstado);
+routes.post('/cidades', CidadeController.create);
+routes.put('/cidades/:_id?', CidadeController.update);
+routes.delete('/cidades/:_id?', CidadeController.delete);
 
 module.exports = routes;
